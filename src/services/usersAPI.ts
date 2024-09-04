@@ -1,8 +1,9 @@
 import { User } from '../shared/types';
+import { API_URL_USERS } from '../constants';
 
 export const getUsers = async (): Promise<User[]> => {
 	try {
-		const response = await fetch('https://jsonplaceholder.typicode.com/users');
+		const response = await fetch(API_URL_USERS);
 
 		if (!response.ok) {
 			throw new Error(`HTTP error! status: ${response.status}`);
