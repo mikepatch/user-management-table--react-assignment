@@ -1,11 +1,8 @@
-type Column = {
-	key: string;
-	label: string;
-};
+import { UserTableColumn } from '../../shared/types';
 
 type TableProps = {
-	columns: Column[];
-	rows: Record<Column['key'], string | number>[];
+	columns: UserTableColumn[];
+	rows: Record<UserTableColumn['key'], string | number>[];
 	caption?: string;
 };
 
