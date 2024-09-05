@@ -1,8 +1,8 @@
-import { UserTableColumn } from './shared/types';
+import { TableColumn } from '@/lib/components/table';
 
 export const API_URL_USERS = 'https://jsonplaceholder.typicode.com/users';
 
-export const USER_TABLE_COLUMNS: UserTableColumn[] = [
+export const USER_TABLE_COLUMNS: TableColumn[] = [
 	{
 		key: 'name',
 		label: 'Name',
