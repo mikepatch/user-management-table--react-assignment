@@ -1,12 +1,9 @@
 import styles from './TableBody.module.css';
-import type { TableRow, TableColumn } from '../shared/types';
+import { useTableContext } from '../TableContext';
 
-type TableBodyProps = {
-	columns: TableColumn[];
-	rows: TableRow[];
-};
+export const TableBody = () => {
+	const { columns, rows } = useTableContext();
 
-export const TableBody = ({ columns, rows }: TableBodyProps) => {
 	return (
 		<tbody>
 			{rows.map((row) => (
