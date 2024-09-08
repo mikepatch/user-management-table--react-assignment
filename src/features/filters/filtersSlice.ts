@@ -16,10 +16,9 @@ export const filtersSlice = createSlice({
 		clearFilter: (state, action: PayloadAction<TableColumn['key']>) => {
 			delete state[action.payload];
 		},
-		clearAllFilters: () => initialState,
 	},
 });
 
-export const { setFilter, clearFilter, clearAllFilters } = filtersSlice.actions;
+export const { setFilter, clearFilter } = filtersSlice.actions;
 
 export default filtersSlice.reducer;

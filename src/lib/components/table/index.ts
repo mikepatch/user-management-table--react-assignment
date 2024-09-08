@@ -1,2 +1,2 @@
 export { Table } from './Table';
-export type { TableColumn } from './types';
+export type { TableColumn } from './shared/types';

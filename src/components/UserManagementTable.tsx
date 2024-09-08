@@ -8,7 +8,7 @@ import { Table } from '@/lib/components/table';
 import { USER_TABLE_COLUMNS } from '@/constants';
 
 export const UserManagementTable = () => {
-	const { users, status, error } = useSelector((state: RootState) => state.users);
+	const { users, status } = useSelector((state: RootState) => state.users);
 	const filters = useSelector((state: RootState) => state.filters);
 	const dispatch = useDispatch<AppDispatch>();
 
@@ -26,14 +26,6 @@ export const UserManagementTable = () => {
 		dispatch(clearFilter(key));
 	};
 
-	if (status === 'loading') {
-		return <div>Loading...</div>;
-	}
-
-	if (status === 'failed') {
-		return <div>Error: {error}</div>;
-	}
-
 	return (
 		<Table
 			caption="Users Table"
@@ -42,6 +34,9 @@ export const UserManagementTable = () => {
 			filters={filters}
 			onFilterChange={handleFilterChange}
 			onClearFilter={handleClearFilter}
+			height="500px"
+			isDataLoading={status === 'loading'}
+			isDataError={status === 'failed'}
 		/>
 	);
 };

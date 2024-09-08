@@ -1,0 +1,13 @@
+.tableBodyError {
+	width: 100%;
+}
+
+.tableBodyErrorCell {
+	padding: 2rem;
+	text-align: center;
+}
+
+.tableBodyErrorMessage {
+	color: #ff0000;
+	font-weight: bold;
+}

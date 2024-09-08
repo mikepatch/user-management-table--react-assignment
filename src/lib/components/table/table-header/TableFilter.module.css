@@ -1,0 +1,54 @@
+.tableFilter {
+	border: 1px solid rgba(0, 0, 0, 0.2);
+	border-radius: var(--border-radius);
+	display: flex;
+	justify-content: space-between;
+	margin-top: 0.5rem;
+	padding: 0.3rem 0.5rem;
+	position: relative;
+}
+
+.tableFilterLabel {
+	composes: visuallyHidden from '../Table.module.css';
+}
+
+.tableFilter:focus-within {
+	outline: var(--outline);
+}
+
+.tableFilterInput {
+	background: none;
+	border: none;
+	outline: none;
+}
+
+.tableFilterButton {
+	align-items: center;
+	background: none;
+	border: none;
+	border-radius: var(--border-radius);
+	color: #000;
+	display: flex;
+	font-size: 1.2rem;
+	justify-content: center;
+	opacity: 0.2;
+	padding: 0;
+	transition: color var(--transition-duration) ease-in-out;
+}
+
+.tableFilterButton:not(:disabled) {
+	cursor: pointer;
+	opacity: 1;
+}
+
+.tableFilterButton:not(:disabled):hover {
+	color: tomato;
+}
+
+.tableFilterButton:focus {
+	outline: var(--outline);
+}
+
+.tableFilterButtonLabel {
+	composes: visuallyHidden from '../Table.module.css';
+}
