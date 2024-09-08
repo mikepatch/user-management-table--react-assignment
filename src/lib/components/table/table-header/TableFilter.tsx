@@ -2,15 +2,16 @@ import { MdClear } from 'react-icons/md';
 
 import { TableColumn } from '../shared/types';
 import styles from './TableFilter.module.css';
+import { useTableContext } from '../TableContext';
 
 type TableFilterProps = {
 	column: TableColumn;
-	value: string;
-	onFilterChange?: (key: string, value: string) => void;
-	onClearFilter?: (key: string) => void;
 };
 
-export const TableFilter = ({ column, value, onFilterChange, onClearFilter }: TableFilterProps) => {
+export const TableFilter = ({ column }: TableFilterProps) => {
+	const { filters, onFilterChange, onClearFilter } = useTableContext();
+	const filterValue = filters?.[column.key];
+
 	const handleFilterChange = (key: string, value: string) => {
 		onFilterChange?.(key, value);
 	};
@@ -28,7 +29,7 @@ export const TableFilter = ({ column, value, onFilterChange, onClearFilter }: Ta
 				id={`filter-${column.key}`}
 				className={styles.tableFilterInput}
 				type="text"
-				value={value || ''}
+				value={filterValue || ''}
 				onChange={(e) => handleFilterChange(column.key, e.target.value)}
 				placeholder={`Filter by ${column.label}`}
 			/>
@@ -38,7 +39,7 @@ export const TableFilter = ({ column, value, onFilterChange, onClearFilter }: Ta
 					className={styles.tableFilterButton}
 					aria-label={`Clear ${column.label} filter`}
 					onClick={() => handleClearFilter(column.key)}
-					disabled={!value}
+					disabled={!filterValue}
 				>
 					<MdClear aria-hidden="true" />
 					<span className={styles.tableFilterButtonLabel}>Clear {column.label} filter</span>

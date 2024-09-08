@@ -1,19 +1,9 @@
-import type { TableColumn, TableRow } from './shared/types';
-import {
-	TableBody,
-	TableBodyError,
-	TableBodyNoResults,
-	TableBodySkeleton,
-} from '@/lib/components/table/table-body';
+import { useTableContext } from './TableContext';
+import { TableBody, TableBodyError, TableBodyNoResults, TableBodySkeleton } from './table-body';
 
-type TableContentProps = {
-	columns: TableColumn[];
-	rows: TableRow[];
-	isDataLoading: boolean;
-	isDataError: boolean;
-};
+export const TableContent = () => {
+	const { columns, rows, isDataLoading, isDataError } = useTableContext();
 
-export const TableContent = ({ columns, rows, isDataLoading, isDataError }: TableContentProps) => {
 	if (isDataLoading) {
 		return <TableBodySkeleton columnsCount={columns.length} rowsCount={15} />;
 	}
@@ -26,5 +16,5 @@ export const TableContent = ({ columns, rows, isDataLoading, isDataError }: Tabl
 		return <TableBodyNoResults columnsCount={columns.length} />;
 	}
 
-	return <TableBody columns={columns} rows={rows} />;
+	return <TableBody />;
 };
