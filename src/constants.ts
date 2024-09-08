@@ -6,17 +6,21 @@ export const USER_TABLE_COLUMNS: TableColumn[] = [
 	{
 		key: 'name',
 		label: 'Name',
+		filterable: true,
 	},
 	{
 		key: 'username',
 		label: 'Username',
+		filterable: true,
 	},
 	{
 		key: 'email',
 		label: 'Email',
+		filterable: true,
 	},
 	{
 		key: 'phone',
 		label: 'Phone',
+		filterable: true,
 	},
 ];

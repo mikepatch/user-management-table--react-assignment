@@ -1,0 +1,12 @@
+.tableBodyRow {
+	border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+	transition: background-color var(--transition-duration) ease-in-out;
+}
+
+.tableBodyRow:last-child {
+	border-bottom: none;
+}
+
+.tableBodyRow:hover {
+	background-color: var(--secondary-color-light);
+}

@@ -1,0 +1,11 @@
+.tableHeader {
+	background: #fff;
+	box-shadow: var(--box-shadow);
+	position: sticky;
+	top: 0;
+	z-index: 1;
+}
+
+.tableHeaderCell {
+	vertical-align: text-top;
+}
