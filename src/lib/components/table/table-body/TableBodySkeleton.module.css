@@ -1,0 +1,30 @@
+.tableBodySkeleton {
+	width: 100%;
+}
+
+.tableBodySkeletonRow {
+	border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.tableBodySkeletonCell {
+	padding: 1rem 2rem;
+}
+
+.tableBodySkeletonContent {
+	animation: pulse 1.5s infinite;
+	background-color: #e0e0e0;
+	border-radius: 4px;
+	height: 20px;
+}
+
+@keyframes pulse {
+	0% {
+		opacity: 0.6;
+	}
+	50% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0.6;
+	}
+}
