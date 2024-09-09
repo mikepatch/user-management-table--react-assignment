@@ -8,6 +8,6 @@
 }
 
 .tableBodyErrorMessage {
-	color: #ff0000;
+	color: var(--warn-color);
 	font-weight: bold;
 }

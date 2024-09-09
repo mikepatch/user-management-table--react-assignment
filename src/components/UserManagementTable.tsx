@@ -18,12 +18,12 @@ export const UserManagementTable = () => {
 		}
 	}, [dispatch, status]);
 
-	const handleFilterChange = (key: string, value: string) => {
-		dispatch(setFilter({ key, value }));
+	const handleFilterChange = (columnKey: string, value: string) => {
+		dispatch(setFilter({ columnKey, value }));
 	};
 
-	const handleClearFilter = (key: string) => {
-		dispatch(clearFilter(key));
+	const handleClearFilter = (columnKey: string) => {
+		dispatch(clearFilter(columnKey));
 	};
 
 	return (

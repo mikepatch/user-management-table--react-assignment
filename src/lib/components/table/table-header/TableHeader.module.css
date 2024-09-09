@@ -1,5 +1,5 @@
 .tableHeader {
-	background: #fff;
+	background: var(--background-color);
 	box-shadow: var(--box-shadow);
 	position: sticky;
 	top: 0;

@@ -16,7 +16,7 @@ export const Table = ({
 	filters,
 	onFilterChange,
 	onClearFilter,
-	height = '500px',
+	height = 'fit-content',
 	isDataLoading = false,
 	isDataError = false,
 }: TableProps) => {

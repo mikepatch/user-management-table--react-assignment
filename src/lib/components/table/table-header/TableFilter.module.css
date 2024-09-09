@@ -27,7 +27,7 @@
 	background: none;
 	border: none;
 	border-radius: var(--border-radius);
-	color: #000;
+	color: var(--black-color);
 	display: flex;
 	font-size: 1.2rem;
 	justify-content: center;
@@ -42,7 +42,7 @@
 }
 
 .tableFilterButton:not(:disabled):hover {
-	color: tomato;
+	color: var(--warn-color);
 }
 
 .tableFilterButton:focus {

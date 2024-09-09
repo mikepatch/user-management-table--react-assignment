@@ -10,8 +10,8 @@ export const filtersSlice = createSlice({
 	name: 'filters',
 	initialState,
 	reducers: {
-		setFilter: (state, action: PayloadAction<{ key: TableColumn['key']; value: string }>) => {
-			state[action.payload.key] = action.payload.value;
+		setFilter: (state, action: PayloadAction<{ columnKey: TableColumn['key']; value: string }>) => {
+			state[action.payload.columnKey] = action.payload.value;
 		},
 		clearFilter: (state, action: PayloadAction<TableColumn['key']>) => {
 			delete state[action.payload];

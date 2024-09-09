@@ -1,7 +1,7 @@
 import '@/App.css';
 import { UserManagementTable } from '@/components/UserManagementTable';
 
-export const App = () => {
+const App = () => {
 	return <UserManagementTable />;
 };
 
