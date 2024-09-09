@@ -10,4 +10,5 @@ export default defineConfig({
     },
   },
   plugins: [react()],
+  base: 'user-management-table--react-assignment'
 })
