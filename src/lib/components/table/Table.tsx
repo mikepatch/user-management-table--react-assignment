@@ -2,26 +2,12 @@ import { useMemo } from 'react';
 
 import styles from './Table.module.css';
 import { DEBOUNCE_TIME } from './constants';
-import type { TableColumn, TableFilter, TableRow } from './shared/types';
+import type { TableProps } from './shared/types';
 import { useDebounce } from './hooks';
 import { filterRows } from './utils';
 import { TableContent } from './TableContent';
-import { TableHeader } from '@/lib/components/table/table-header';
-
-type Unit = 'px' | 'em' | 'rem' | 'vh' | 'vw';
-type MaxHeight = `${string}${Unit}`;
-
-type TableProps = {
-	columns: TableColumn[];
-	rows: TableRow[];
-	caption?: string;
-	filters?: TableFilter;
-	onFilterChange?: (key: string, value: string) => void;
-	onClearFilter?: (key: string) => void;
-	height?: MaxHeight;
-	isDataLoading?: boolean;
-	isDataError?: boolean;
-};
+import { TableHeader } from './table-header';
+import { TableContextProvider } from './TableContext';
 
 export const Table = ({
 	columns,
@@ -45,29 +31,31 @@ export const Table = ({
 
 	return (
 		<div role="region" tabIndex={0} style={{ height }} className={styles.tableContainer}>
-			<table
-				role="table"
-				aria-labelledby={caption ? 'table-caption' : undefined}
-				className={styles.table}
+			<TableContextProvider
+				value={{
+					columns,
+					rows: filteredRows,
+					filters,
+					onFilterChange,
+					onClearFilter,
+					isDataLoading,
+					isDataError,
+				}}
 			>
-				{caption && (
-					<caption id="table-caption" className={styles.tableCaption}>
-						{caption}
-					</caption>
-				)}
-				<TableHeader
-					columns={columns}
-					filters={filters}
-					onFilterChange={onFilterChange}
-					onClearFilter={onClearFilter}
-				/>
-				<TableContent
-					columns={columns}
-					rows={filteredRows}
-					isDataLoading={isDataLoading}
-					isDataError={isDataError}
-				/>
-			</table>
+				<table
+					role="table"
+					aria-labelledby={caption ? 'table-caption' : undefined}
+					className={styles.table}
+				>
+					{caption && (
+						<caption id="table-caption" className={styles.tableCaption}>
+							{caption}
+						</caption>
+					)}
+					<TableHeader />
+					<TableContent />
+				</table>
+			</TableContextProvider>
 		</div>
 	);
 };
