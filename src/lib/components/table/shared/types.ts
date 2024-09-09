@@ -4,12 +4,12 @@ export type TableColumn = {
 	filterable?: boolean;
 };
 
-export type TableRow = Record<TableColumn['key'], string | number>;
+export type TableRow = Record<TableColumn['key'], string | number | undefined>;
 
 export type TableFilter = Record<TableColumn['key'], string>;
 
-type Unit = 'px' | 'em' | 'rem' | 'vh' | 'vw';
-type MaxHeight = `${string}${Unit}`;
+type Unit = 'px' | 'em' | 'rem' | 'vh' | 'vw' | '%';
+type Size = `${string}${Unit}` | 'fit-content' | 'min-content' | 'max-content';
 
 export type TableProps = {
 	columns: TableColumn[];
@@ -18,7 +18,7 @@ export type TableProps = {
 	filters?: TableFilter;
 	onFilterChange?: (key: string, value: string) => void;
 	onClearFilter?: (key: string) => void;
-	height?: MaxHeight;
+	height?: Size;
 	isDataLoading?: boolean;
 	isDataError?: boolean;
 };
