@@ -4,13 +4,12 @@
 	--border-radius: 5px;
 	--box-shadow: 2px 4px 5px 0 rgba(0, 0, 0, 0.1);
 	--outline: 2px solid var(--primary-color);
-	--primary-color: #48cfcb;
-	--primary-color-light: rgba(72, 207, 203, 0.1);
+	--primary-color: #86bf2b;
+	--primary-color-light: rgba(134, 191, 43, 0.1);
 	--transition-duration: 0.2s;
 	--warn-color: #ff6347;
 
-
-	scrollbar-color: var(--primary-color) var(--primary-color-light);
+	scrollbar-color: rgba(134, 191, 43, 0.4) var(--primary-color-light);
 	scrollbar-width: thin;
 
 	background: var(--background-color);
