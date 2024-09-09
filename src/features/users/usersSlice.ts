@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import type { PayloadAction } from '@reduxjs/toolkit';
 
-import { User } from '../../shared/types';
+import type { User } from '../../shared/types';
 import { getUsers } from '../../services/usersAPI';
 
 export type UsersState = {
