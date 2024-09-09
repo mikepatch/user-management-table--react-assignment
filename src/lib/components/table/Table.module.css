@@ -1,0 +1,56 @@
+.tableContainer {
+	--background-color: #fff;
+	--black-color: #333;
+	--border-radius: 5px;
+	--box-shadow: 2px 4px 5px 0 rgba(0, 0, 0, 0.1);
+	--outline: 2px solid var(--primary-color);
+	--primary-color: #48cfcb;
+	--primary-color-light: rgba(72, 207, 203, 0.1);
+	--transition-duration: 0.2s;
+	--warn-color: #ff6347;
+
+
+	scrollbar-color: var(--primary-color) var(--primary-color-light);
+	scrollbar-width: thin;
+
+	background: var(--background-color);
+	border-radius: var(--border-radius);
+	box-shadow: var(--box-shadow);
+	overflow: auto;
+	position: relative;
+}
+
+.tableContainer:focus-visible {
+	outline: var(--outline);
+}
+
+.table {
+	border-collapse: collapse;
+	border-radius: var(--border-radius);
+	table-layout: fixed;
+	text-align: left;
+}
+
+.tableCaption {
+	font-size: 1.5rem;
+	font-weight: 700;
+	padding: 1rem 2rem 0 2rem;
+	text-align: left;
+}
+
+.table td,
+.table th {
+	padding: 1rem 2rem;
+}
+
+.visuallyHidden {
+	border: 0;
+	clip: rect(0, 0, 0, 0);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	position: absolute;
+	padding: 0;
+	white-space: nowrap;
+	width: 1px;
+}
